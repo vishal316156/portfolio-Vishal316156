@@ -243,10 +243,37 @@ export default function App() {
         <div className="p-10 rounded-3xl bg-gray-100 dark:bg-zinc-900 border border-gray-300 dark:border-zinc-800">
 
           <div className="space-y-6 text-lg ">
-            <p className="hover:translate-x-2 transition-all duration-300 cursor-pointer" ><span className="font-bold ">Email:</span> vishalnitjsr2605ee@gmail.com</p>
-            <p className="hover:translate-x-2 transition-all duration-300 cursor-pointer" ><span className="font-bold ">Phone:</span> +91 9304564714</p>
-            <p className="hover:translate-x-2 transition-all duration-300 cursor-pointer" ><span className="font-bold ">LinkedIn:</span> linkedin.com/in/vishalkumarnitjsr</p>
-            <p className="hover:translate-x-2 transition-all duration-300 cursor-pointer" ><span className="font-bold ">GitHub:</span> github.com/vishal316156</p>
+           
+            <a
+              href="mailto:vishalnitjsr2605ee@gmail.com"
+              className="block hover:translate-x-2 transition-all duration-300 cursor-pointer"
+            >
+              <span className="font-bold">Email:</span> vishalnitjsr2605ee@gmail.com
+            </a>
+
+            <a
+              href="tel:+919304564714"
+              className="block hover:translate-x-2 transition-all duration-300 cursor-pointer"
+            >
+              <span className="font-bold">Phone:</span> +91 9304564714
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/vishalkumarnitjsr/"
+              target="_blank"
+              className="block hover:translate-x-2 transition-all duration-300 cursor-pointer"
+            >
+              <span className="font-bold">LinkedIn:</span> linkedin.com/in/vishalkumarnitjsr
+            </a>
+
+            <a
+              href="https://github.com/vishal316156"
+              target="_blank"
+              className="block hover:translate-x-2 transition-all duration-300 cursor-pointer"
+            >
+              <span className="font-bold">GitHub:</span> github.com/vishal316156
+            </a>
+
           </div>
 
         </div>
