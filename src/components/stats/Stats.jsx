@@ -3,20 +3,26 @@ import CountUp from "react-countup";
 
 const stats = [
   {
-    value: 400,
-    suffix: "+",
-    label: "Problems Solved across different platforms",
-  },
-  {
-    value: 1081,
-    suffix: "+",
-    label: "Max Codeforces Rating",
-  },
-  {
     value: 2,
     suffix: "",
     label: "Major Projects",
   },
+  {
+    value: 1615,
+    suffix: "",
+    label: "Max Leetcode Rating",
+  },
+  {
+    value: 1152,
+    suffix: "",
+    label: "Max Codeforces Rating",
+  },
+  {
+    value: 400,
+    suffix: "+",
+    label: "Problems Solved across different platforms",
+  },
+  
   {
     value: 10,
     suffix: "+",
@@ -61,8 +67,9 @@ export default function Stats() {
             }}
             className="
                 glass
+                glow-pill
                 rounded-3xl
-                p-8
+                p-6
                 group
                 cursor-pointer
                 transition-all
@@ -75,7 +82,7 @@ export default function Stats() {
             {item.suffix}
             </h2>
 
-            <p className="text-zinc-400">
+            <p className="text-zinc-400 font-medium">
               {item.label}
             </p>
           </motion.div>

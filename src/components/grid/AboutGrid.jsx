@@ -73,7 +73,7 @@ export default function AboutGrid() {
               y: -12,
               scale: 1.03,
             }}
-            className=" glass rounded-3xl p-8 min-h-[220px] cursor-pointer transition-all duration-500
+            className=" glass glow-pill rounded-3xl p-8 min-h-[220px] cursor-pointer transition-all duration-500
               hover:border-violet-500/50 ">
             <h3 className="text-2xl font-bold mb-5">
               {card.title}

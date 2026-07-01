@@ -9,9 +9,9 @@ import { SiGeeksforgeeks } from "react-icons/si";
 
 const leetcodeStats = {
   solved: 184,
-  easy: 55,
-  medium: 115,
-  hard: 14,
+  easy: 71,
+  medium: 121,
+  hard: 16,
 };
 const gfgStats = {
   basic: 3,
@@ -22,7 +22,7 @@ const gfgStats = {
 const codeforcesStats = {
   div1: 0,
   div2: 2,
-  div3: 3,
+  div3: 4,
   div4: 2,
 };
 
@@ -42,7 +42,7 @@ const profiles = [
 
   {
     name: "Codeforces",
-    value: "1081 max. Rating",
+    value: "1152 max. Rating",
     link: "https://codeforces.com/profile/Vishal_MarcoX_83",
     icon: <FaTrophy size={30} />,
   },
@@ -86,10 +86,17 @@ export default function DsaTracker() {
             {item.name === "LeetCode" ? (
             <div className="w-full">
 
+              <div className="relative mt-4">
+                <div className="h-[3px] bg-zinc-700 rounded-full"></div>
+                <div className="absolute left-0 top-[-4px] w-3 h-3 rounded-full bg-green-500"></div>
+                <div className="absolute left-1/2 -translate-x-1/2 top-[-4px] w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="absolute right-0 top-[-4px] w-3 h-3 rounded-full bg-red-500"></div>
+
+            </div>
             <div className="flex justify-between text-center mb-3">
 
                 <div>
-                <div className="w-3 h-3 rounded-full bg-green-500 mx-auto mb-2"></div>
+                <div className="w-3 h-3 rounded-full mx-auto mb-2"></div>
                 <p className="text-sm">Easy</p>
                 <p className="font-semibold">
                     {leetcodeStats.easy}
@@ -97,7 +104,7 @@ export default function DsaTracker() {
                 </div>
 
                 <div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500 mx-auto mb-2"></div>
+                <div className="w-3 h-3 rounded-full  mx-auto mb-2"></div>
                 <p className="text-sm">Medium</p>
                 <p className="font-semibold">
                     {leetcodeStats.medium}
@@ -105,7 +112,7 @@ export default function DsaTracker() {
                 </div>
 
                 <div>
-                <div className="w-3 h-3 rounded-full bg-red-500 mx-auto mb-2"></div>
+                <div className="w-3 h-3 rounded-full  mx-auto mb-2"></div>
                 <p className="text-sm">Hard</p>
                 <p className="font-semibold">
                     {leetcodeStats.hard}
@@ -114,13 +121,11 @@ export default function DsaTracker() {
 
             </div>
 
-            <div className="relative mt-4">
-                <div className="h-[3px] bg-zinc-700 rounded-full"></div>
-                <div className="absolute left-0 top-[-4px] w-3 h-3 rounded-full bg-green-500"></div>
-                <div className="absolute left-1/2 -translate-x-1/2 top-[-4px] w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="absolute right-0 top-[-4px] w-3 h-3 rounded-full bg-red-500"></div>
-
-            </div>
+              <div className="pt-2 border-t-2 border-t border-zinc-700">
+                <p className="flex text-amber-300">
+                  1615 Max Rating
+                </p>
+                </div>
 
             </div>
 
@@ -186,16 +191,16 @@ export default function DsaTracker() {
                 <span className="text-amber-400" >{codeforcesStats.div4}</span>
                 </div>
 
-                <div className="pt-2 border-t border-zinc-700">
-                <p className="text-zinc-400 text-sm">
-                    1081 Max Rating, 129 problem solved
+                <div className="pt-2 border-t-2 border-t border-zinc-700">
+                <p className="flex text-amber-300">
+                  1152 Max Rating
                 </p>
                 </div>
 
             </div>
 
             ) : (
-            <p className="text-zinc-400">
+            <p className="text-amber-300">
                 {item.value}
             </p>
             )}
