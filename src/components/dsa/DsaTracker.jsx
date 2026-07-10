@@ -123,7 +123,7 @@ export default function DsaTracker() {
 
               <div className="pt-2 border-t-2 border-t border-zinc-700">
                 <p className="flex text-amber-300">
-                  1615 Max Rating
+                  1645 Max Rating
                 </p>
                 </div>
 
