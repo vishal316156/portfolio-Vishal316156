@@ -8,7 +8,7 @@ const stats = [
     label: "Major Projects",
   },
   {
-    value: 1615,
+    value: 1645,
     suffix: "",
     label: "Max Leetcode Rating",
   },
