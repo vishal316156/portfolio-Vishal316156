@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import profile from "../../assets/profile.png";
 
 const roles = [
-  "Frontend Engineer",
+  "Fullstack Developer",
   "UI/UX Enthusiast",
   "React Specialist",
   "Motion Designer",
@@ -36,7 +36,7 @@ export default function Hero() {
 <div
   className="bottom-0 absolute right-0 h-72 w-72 bg-cyan-500/30 blur-[120px] rounded-full pointer-events-none"/>
 
-      {/* Background Glow */}
+
 
       <div className="absolute inset-0 pointer-events-none">
 
@@ -48,7 +48,7 @@ export default function Hero() {
 
       <div className="section grid lg:grid-cols-2 gap-16 items-center relative z-10">
 
-        {/* Left */}
+
 
         <div>
 
@@ -71,7 +71,7 @@ export default function Hero() {
             Kumar
           </motion.h1>
 
-          {/* Role Switcher */}
+
 
           <div className="h-16 mt-6 overflow-hidden">
             <motion.h2
@@ -97,7 +97,7 @@ export default function Hero() {
             Node.js and AI integrations.
           </motion.p>
 
-          {/* Buttons */}
+
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -121,7 +121,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right */}
+
 
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -140,7 +140,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+
 
       <motion.div
         animate={{

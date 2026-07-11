@@ -65,15 +65,7 @@ export default function Stats() {
                 y: -12,
                 scale: 1.04,
             }}
-            className="
-                glass
-                glow-pill
-                rounded-3xl
-                p-6
-                group
-                cursor-pointer
-                transition-all
-                duration-500
+            className=" glass glow-pill rounded-3xl p-6 group cursor-pointer transition-all duration-500
                 hover:border-violet-500/50
             "
             >

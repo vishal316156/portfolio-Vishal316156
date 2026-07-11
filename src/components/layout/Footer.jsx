@@ -13,7 +13,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
 
-          {/* Left */}
+
 
           <div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
 
           </div>
 
-          {/* Right */}
+
 
           <div className="flex items-center gap-5">
 

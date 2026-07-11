@@ -8,10 +8,10 @@ import { SiGeeksforgeeks } from "react-icons/si";
 
 
 const leetcodeStats = {
-  solved: 184,
-  easy: 71,
-  medium: 121,
-  hard: 16,
+  solved: 228,
+  easy: 81,
+  medium: 129,
+  hard: 18,
 };
 const gfgStats = {
   basic: 3,

@@ -84,7 +84,7 @@ export default function TechMarquee() {
       <div
         className="relative h-[360px] max-w-6xl mx-auto overflow-hidden">
 
-        {/* Orbit Ring */}
+
 
         <div
           className=" absolute left-1/2 top-1/2 w-[300px]
