@@ -31,13 +31,15 @@ export default function Navbar() {
       });
     },
     {
-      threshold: 0.4,
+      threshold: 0,
+      rootMargin: "-40% 0px -40% 0px",
     }
   );
 
   sections.forEach((section) => observer.observe(section));
 
   return () => observer.disconnect();
+
 }, []);
 
   const links = [
