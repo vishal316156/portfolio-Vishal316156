@@ -1,39 +1,41 @@
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 
-const stats = [
-  {
-    value: 2,
-    suffix: "",
-    label: "Major Projects",
-  },
-  {
-    value: 1645,
-    suffix: "",
-    label: "Max Leetcode Rating",
-  },
-  {
-    value: 1152,
-    suffix: "",
-    label: "Max Codeforces Rating",
-  },
-  {
-    value: 400,
-    suffix: "+",
-    label: "Problems Solved across different platforms",
-  },
-  
-  {
-    value: 10,
-    suffix: "+",
-    label: "Technologies",
-  },
-];
+export default function Stats({ stats }) {
+  const leetcodeRating = stats?.leetcode?.maxRating ?? 0;
+  const codeforcesRating = stats?.codeforces?.maxRating ?? 0;
 
-export default function Stats() {
+
+  const overviewStats = [
+    {
+      value: stats?.portfolio?.majorProjects ?? 0,
+      suffix: "",
+      label: "Major Projects",
+    },
+    {
+      value: leetcodeRating,
+      suffix: "",
+      label: "Max LeetCode Rating",
+    },
+    {
+      value: codeforcesRating,
+      suffix: "",
+      label: "Max Codeforces Rating",
+    },
+    {
+      value: stats?.portfolio?.problemsSolved ?? 0,
+      suffix: "+",
+      label: "Problems Solved",
+    },
+    {
+      value: stats?.portfolio?.technologies ?? 0,
+      suffix: "+",
+      label: "Technologies",
+    },
+  ];
+
   return (
     <section className="section">
-
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -46,31 +48,33 @@ export default function Stats() {
             },
           },
         }}
-        className="grid md:grid-cols-4 gap-6"
+        className="grid md:grid-cols-5 gap-6"
       >
-        {stats.map((item, index) => (
+        {overviewStats.map((item, index) => (
           <motion.div
             key={index}
             variants={{
-                hidden: {
+              hidden: {
                 opacity: 0,
                 y: 40,
-                },
-                visible: {
+              },
+              visible: {
                 opacity: 1,
                 y: 0,
-                },
+              },
             }}
             whileHover={{
-                y: -12,
-                scale: 1.04,
+              y: -12,
+              scale: 1.04,
             }}
-            className=" glass glow-pill rounded-3xl p-6 group cursor-pointer transition-all duration-500
-                hover:border-violet-500/50
-            "
-            >
+            className="glass glow-pill rounded-3xl p-6 group cursor-pointer transition-all duration-500 hover:border-violet-500/50"
+          >
             <h2 className="text-5xl font-black mb-3 gradient-text">
-            {item.value}
+              <CountUp.default
+              end={item.value}
+              duration={2}
+              separator=""
+            />
             {item.suffix}
             </h2>
 
@@ -80,7 +84,6 @@ export default function Stats() {
           </motion.div>
         ))}
       </motion.div>
-
     </section>
   );
 }
