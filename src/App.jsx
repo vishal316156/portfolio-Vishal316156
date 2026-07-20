@@ -17,12 +17,22 @@ export default function App() {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-  axios
-    axios
-  .get(`${import.meta.env.VITE_API_URL}/api/profile-stats`)
-    .then((res) => setStats(res.data))
-    .catch((err) => console.error(err));
-}, []);
+    const fetchStats = async () => {
+      try {
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/profile-stats`
+        );
+
+        setStats(res.data);
+        if (res.data.refreshing) {
+          setTimeout(fetchStats, 5000);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchStats();
+  }, []);
 
 
   return (
