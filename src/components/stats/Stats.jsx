@@ -33,7 +33,6 @@ export default function Stats({ stats }) {
       label: "Technologies",
     },
   ];
-
   return (
     <section className="section">
       <motion.div
@@ -48,7 +47,7 @@ export default function Stats({ stats }) {
             },
           },
         }}
-        className="grid md:grid-cols-5 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6"
       >
         {overviewStats.map((item, index) => (
           <motion.div
@@ -72,7 +71,7 @@ export default function Stats({ stats }) {
             <h2 className="text-5xl font-black mb-3 gradient-text">
               <CountUp.default
               end={item.value}
-              duration={2}
+              duration={0.5}
               separator=""
             />
             {item.suffix}

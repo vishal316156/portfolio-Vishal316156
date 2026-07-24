@@ -6,14 +6,14 @@ const REFRESH_INTERVAL =
   Number(process.env.STATS_REFRESH_HOURS || 24) * 60 * 60 * 1000;
 let isRefreshing = false;
 
-async function refreshStats(stats) {
+async function refreshStats() {
   try {
+  const stats = await Stats.findOne();
     const [cf, lc] = await Promise.all([
       fetchCodeforces(),
       fetchLeetcode(),
     ]);
 
-    // Merging new data with existing data
     stats.codeforces = {
       ...stats.codeforces,
       ...cf,
@@ -25,9 +25,9 @@ async function refreshStats(stats) {
     stats.lastUpdated = new Date();
     await stats.save();
 
-    console.log("✅ Stats refreshed successfully");
+    console.log("Stats refreshed successfully");
   } catch (err) {
-    console.error("❌ Background refresh failed:", err.message);
+    console.error("Background refresh failed:", err.message);
   } finally {
     isRefreshing = false;
   }
@@ -36,7 +36,6 @@ async function refreshStats(stats) {
 const getStats = async (req, res) => {
   try {
     let stats = await Stats.findOne();
-    let refreshing = false;
     if (!stats) {
       stats = new Stats();
 
@@ -59,13 +58,12 @@ const getStats = async (req, res) => {
 
       if (shouldRefresh && !isRefreshing) {
         isRefreshing = true;
-        refreshing = true;
-        refreshStats(stats);
+        refreshStats();
       }
     }
 
     const response = stats.toObject();
-    response.refreshing = refreshing;
+    response.refreshing = isRefreshing;
 
     delete response._id;
     delete response.__v;
