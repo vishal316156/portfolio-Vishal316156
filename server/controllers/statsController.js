@@ -2,7 +2,7 @@ const Stats = require("../models/Stats");
 const fetchCodeforces = require("../services/fetchCodeforces");
 const fetchLeetcode = require("../services/fetchLeetcode");
 
-const REFRESH_INTERVAL =10*1000;
+const REFRESH_INTERVAL =12*60*60*1000;
   
 let isRefreshing = false;
 
