@@ -69,11 +69,7 @@ export default function Stats({ stats }) {
             className="glass glow-pill rounded-3xl p-6 group cursor-pointer transition-all duration-500 hover:border-violet-500/50"
           >
             <h2 className="text-5xl font-black mb-3 gradient-text">
-              <CountUp.default
-              end={item.value}
-              duration={0.5}
-              separator=""
-            />
+              {item.value}
             {item.suffix}
             </h2>
 

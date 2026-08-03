@@ -35,8 +35,8 @@ export const projects = [
       "Dataset Evaluation",
     ],
 
-    liveUrl: "YOUR_PLAGSCHECKER_LIVE_URL",
-    githubUrl: "YOUR_PLAGSCHECKER_GITHUB_URL",
+    liveUrl: "https://cpp-plags-checker.vercel.app/",
+    githubUrl: "https://github.com/vishal316156/CppPlagsChecker",
   },
 
   {
