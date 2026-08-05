@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { projects } from "../../data/projects";
 
 export default function FeaturedProject() {
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <section id="projects" className="section">
       {projects.map((project, projectIndex) => (
@@ -30,7 +34,7 @@ export default function FeaturedProject() {
             </p>
           </motion.div>
 
-          {/* Screenshots */}
+          {/* SS */}
           <div
             className={`
               grid grid-cols-1 gap-4 md:gap-5
@@ -44,22 +48,14 @@ export default function FeaturedProject() {
             {project.screenshots.map((screenshot, index) => (
               <motion.div
                 key={`${project.id}-${index}`}
-                whileHover={{
-                  scale: 1.02,
-                  y: -10,
-                }}
+                whileHover={{ scale: 1.02, y: -10 }}
                 transition={{
                   type: "spring",
                   stiffness: 450,
                   damping: 18,
                 }}
-                className="
-                  glass
-                  rounded-xl
-                  md:rounded-2xl
-                  overflow-hidden
-                  hover:border-violet-500/50
-                "
+                className=" glass rounded-xl md:rounded-2xl overflow-hidden hover:border-violet-500/50 cursor-zoom-in "
+                onClick={() => setSelectedImage(screenshot)}
               >
                 <img
                   src={screenshot.src}
@@ -84,16 +80,7 @@ export default function FeaturedProject() {
 
           {/* Features */}
           <div
-            className="
-              grid
-              grid-cols-2
-              sm:grid-cols-3
-              md:grid-cols-4
-              lg:grid-cols-8
-              gap-3
-              md:gap-4
-            "
-          >
+            className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
             {project.features.map((feature) => (
               <motion.div
                 key={`${project.id}-${feature}`}
@@ -106,21 +93,7 @@ export default function FeaturedProject() {
                   stiffness: 450,
                   damping: 18,
                 }}
-                className="
-                  glass
-                  glow-pill
-                  rounded-xl
-                  md:rounded-2xl
-                  p-3
-                  md:p-4
-                  text-center
-                  text-xs
-                  sm:text-sm
-                  cursor-pointer
-                  transition-all
-                  duration-200
-                "
-              >
+                className=" glass glow-pill rounded-xl md:rounded-2xl p-3 md:p-4 text-center text-xs sm:text-sm cursor-pointer transition-all duration-200 ">
                 {feature}
               </motion.div>
             ))}
@@ -134,17 +107,7 @@ export default function FeaturedProject() {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="
-                px-8
-                py-4
-                rounded-2xl
-                bg-gradient-to-r
-                from-violet-600
-                to-cyan-500
-                font-medium
-                text-center
-              "
-            >
+              className=" px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 font-medium text-center" >
               Live Demo
             </motion.a>
 
@@ -154,22 +117,24 @@ export default function FeaturedProject() {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="
-                px-8
-                py-4
-                rounded-2xl
-                border
-                border-zinc-700
-                hover:border-violet-500
-                transition-all
-                text-center
-              "
-            >
+              className=" px-8 py-4 rounded-2xl border border-zinc-700 hover:border-violet-500 transition-all text-center">
               GitHub
             </motion.a>
           </div>
         </div>
       ))}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-6"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img
+            src={selectedImage.src}
+            alt={selectedImage.alt}
+            onClick={(e) => e.stopPropagation()}
+            className=" max-w-full max-h-[90vh] w-auto h-auto rounded-xl object-contain"/>
+        </div>
+      )}
     </section>
   );
 }

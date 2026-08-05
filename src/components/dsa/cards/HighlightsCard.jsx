@@ -84,7 +84,11 @@ export default function HighlightsCard({ stats }) {
       <div className="pt-3 border-t border-zinc-700">
         <p className="text-xs text-zinc-500">
           Last Updated{" "}
-          {new Date(stats.lastUpdated).toLocaleDateString()}
+          {new Date(stats.lastUpdated).toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
         </p>
       </div>
     </motion.div>

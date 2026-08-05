@@ -103,7 +103,6 @@ export default function App() {
           </p>
         </section>
        )}
-
       <TechMarquee />
       <Contact />
       <Footer />
