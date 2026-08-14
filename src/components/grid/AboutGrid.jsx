@@ -4,7 +4,7 @@ const cards = [
   {
     title: "About Me",
     description:
-      "Frontend-focused developer passionate about building modern, responsive and interactive web applications.",
+      "MERN Stack developer focused on building scalable web applications and integrating AI chatbot experiences using modern frontend and backend technologies.",
   },
 
   {

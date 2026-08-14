@@ -4,9 +4,7 @@ import profile from "../../assets/profile.png";
 
 const roles = [
   "Fullstack Developer",
-  "UI/UX Enthusiast",
-  "React Specialist",
-  "Motion Designer",
+  "DSA Enthusiast",
 ];
 
 export default function Hero() {
@@ -30,28 +28,19 @@ export default function Hero() {
       "
     >
 
-    <div
-  className=" absolute top-10 left-0 h-72 w-72 bg-violet-600/30 blur-[120px] rounded-full pointer-events-none"/>
+    <div className=" absolute top-10 left-0 h-72 w-72 bg-violet-600/30 blur-[120px] rounded-full pointer-events-none"/>
 
-<div
-  className="bottom-0 absolute right-0 h-72 w-72 bg-cyan-500/30 blur-[120px] rounded-full pointer-events-none"/>
-
-
+<div className="bottom-0 absolute right-0 h-72 w-72 bg-cyan-500/30 blur-[120px] rounded-full pointer-events-none"/>
 
       <div className="absolute inset-0 pointer-events-none">
 
         <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-violet-600/20 blur-[140px]" />
-
         <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-cyan-500/20 blur-[140px]" />
 
       </div>
 
       <div className="section grid lg:grid-cols-2 gap-16 items-center relative z-10">
-
-
-
         <div>
-
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
