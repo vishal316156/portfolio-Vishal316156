@@ -78,7 +78,7 @@ export default function LeetCodeCard({ stats }) {
 
     <div className="flex justify-between">
       <span className="text-zinc-400">
-        Max Rating
+        Current Rating
       </span>
 
       <span className="text-green-400 font-semibold">

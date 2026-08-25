@@ -15,7 +15,7 @@ export default function Stats({ stats }) {
     {
       value: leetcodeRating,
       suffix: "",
-      label: "Max LeetCode Rating",
+      label: "LeetCode Rating",
     },
     {
       value: codeforcesRating,

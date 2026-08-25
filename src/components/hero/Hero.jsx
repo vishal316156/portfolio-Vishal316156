@@ -103,8 +103,7 @@ export default function Hero() {
             <a
               href="/resume.pdf"
               target="_blank"
-              className="px-8 py-4 rounded-2xl border border-zinc-700 hover:border-violet-500 transition-all duration-300"
-            >
+              className=" px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:scale-105 transition-all duration-300">
               Resume
             </a>
           </motion.div>

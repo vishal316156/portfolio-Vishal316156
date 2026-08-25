@@ -89,14 +89,6 @@ export default function Navbar() {
               {item.name}
             </a>
           ))}
-          
-
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              className=" px-5 py-2 rounded-full border border-amber-500 hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] transition-all duration-300">
-              Resume
-            </a>
           </div>
 
           <button

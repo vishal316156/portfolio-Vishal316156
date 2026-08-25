@@ -1,5 +1,6 @@
 import plagsHome from "../assets/plagschecker-home.png";
 import plagsResult from "../assets/plagschecker-result.png";
+import plagsResult1 from "../assets/plagschecker-result1.png";
 
 import dashboard from "../assets/chatbot-dashboard.png";
 import home from "../assets/chatbot-home.png";
@@ -19,6 +20,10 @@ export const projects = [
       },
       {
         src: plagsResult,
+        alt: "C++ source code similarity analysis result",
+      },
+      {
+        src: plagsResult1,
         alt: "C++ source code similarity analysis result",
       },
     ],

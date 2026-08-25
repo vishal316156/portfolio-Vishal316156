@@ -5,7 +5,7 @@ import Stats from "./components/stats/Stats";
 import AboutGrid from "./components/grid/AboutGrid";
 import FeaturedProject from "./components/featured/FeaturedProject";
 import DsaTracker from "./components/dsa/DsaTracker";
-import TechMarquee from "./components/marquee/TechMarquee";
+import TechStack from "./components/marquee/TechStack";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/layout/Footer";
 import { useEffect, useRef, useState } from "react";
@@ -103,7 +103,7 @@ export default function App() {
           </p>
         </section>
        )}
-      <TechMarquee />
+      <TechStack />
       <Contact />
       <Footer />
     </>
