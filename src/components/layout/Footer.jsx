@@ -47,14 +47,6 @@ export default function Footer() {
             </a>
 
             <a
-                href="https://www.instagram.com/vishalsingh_2488?igsh=ZHJxMGVpeGM2MTE4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className=" p-3 rounded-full border border-zinc-700 hover:border-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,.3)] transition-all ">
-                <FaInstagram size={22} />
-                </a>
-
-            <a
               href="mailto:vishalnitjsr2605ee@gmail.com"
               className="p-3 rounded-full border border-zinc-700
               hover:border-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,.3)] transition-all
@@ -62,6 +54,14 @@ export default function Footer() {
             >
               <FaEnvelope size={22} />
             </a>
+
+            <a
+                href="https://www.instagram.com/vishalsingh_2488?igsh=ZHJxMGVpeGM2MTE4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" p-3 rounded-full border border-zinc-700 hover:border-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,.3)] transition-all ">
+                <FaInstagram size={22} />
+                </a>
 
           </div>
 

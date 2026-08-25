@@ -117,7 +117,7 @@ export default function FeaturedProject() {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className=" px-8 py-4 rounded-2xl border border-zinc-700 hover:border-violet-500 transition-all text-center">
+              className=" px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 font-medium text-center" >
               GitHub
             </motion.a>
           </div>

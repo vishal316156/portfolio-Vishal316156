@@ -120,7 +120,6 @@ export default function TechStack() {
 
       </div>
 
-      {/* Category buttons */}
       <div className="flex flex-wrap justify-center gap-3 mb-12">
 
         {categories.map((category) => {
@@ -138,8 +137,8 @@ export default function TechStack() {
                 transition-all duration-200
                 ${
                   isActive
-                    ? "bg-violet-600 border-violet-500 text-white"
-                    : "bg-white/[0.03] border-white/10 text-zinc-400 hover:text-white hover:border-violet-500/40"
+                    ? "bg-gradient-to-r from-violet-600 to-cyan-500 text-white"
+                    : "bg-white/[0.03] border-white/20 text-zinc-300 hover:text-white hover:border-violet-500 shadow-[0_0_20px_rgba(139,92,246,0.25)]"
                 }
               `}
             >
