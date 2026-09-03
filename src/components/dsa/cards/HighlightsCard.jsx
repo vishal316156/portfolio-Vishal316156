@@ -63,7 +63,7 @@ export default function HighlightsCard({ stats }) {
             </span>
 
             <span className="text-green-400 font-semibold">
-              {/* {stats.leetcode.maxRating} */} 1746
+              {/* {stats.leetcode.maxRating} */} 1759
             </span>
           </div>
 
