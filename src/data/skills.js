@@ -20,5 +20,6 @@ export const skills = {
     "GitHub",
     "Vercel",
     "VS Code",
+    "Docker",
   ],
 };

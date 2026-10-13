@@ -7,9 +7,31 @@ import home from "../assets/chatbot-home.png";
 import chat from "../assets/chatbot-chat.png";
 
 export const projects = [
+  
+{
+  id: "gatecache",
+  work: "BACKEND INFRASTRUCTURE",
+  title: "GateCache — API Gateway & Caching Engine",
+  description:
+    "High-performance API gateway built with Node.js and Express, featuring multi-level caching, rate limiting, and load balancing to improve API performance and reliability.",
+  featuresDescription:
+    "Built and tested a Dockerized backend infrastructure system with Redis-backed caching, request throttling, backend routing, and performance benchmarking.",
+  features: [
+    "API Gateway",
+    "L1 LRU Cache",
+    "Redis L2 Cache",
+    "TTL Expiration",
+    "Rate Limiting",
+    "Load Balancing",
+    "Docker Compose",
+    "Vitest Testing",
+  ],
+  githubUrl: "https://github.com/vishal316156/gatecache",
+},
+
   {
     id: "plagschecker",
-    eyebrow: "SOURCE CODE ANALYSIS",
+    work: "C++ CODE ANALYSIS",
     title: "C++ Plagiarism Checker",
     description:
       "Source-code similarity detection system for C++ programs using tokenization, code normalization, n-gram similarity and winnowing-based fingerprinting to identify structural similarities across different code transformations.",
@@ -47,7 +69,7 @@ export const projects = [
   {
     id: "ai-chatbot",
 
-    eyebrow: "AI APPLICATION",
+    work: "AI APPLICATION",
     title: "AI Chatbot",
     description:
       "Full-stack AI platform powered by Gemini AI with authentication, persistent conversations, dashboard analytics, responsive design and modern user experience.",

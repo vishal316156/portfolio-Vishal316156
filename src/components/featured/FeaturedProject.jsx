@@ -15,14 +15,14 @@ export default function FeaturedProject() {
             <hr className="border-zinc-800 my-16 md:my-20" />
           )}
 
-          {/* Project Heading */}
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <p className="text-violet-400 mb-3 md:mb-4 tracking-widest text-sm md:text-base">
-              {project.eyebrow}
+              {project.work}
             </p>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 md:mb-6">
@@ -34,40 +34,36 @@ export default function FeaturedProject() {
             </p>
           </motion.div>
 
-          {/* SS */}
-          <div
-            className={`
-              grid grid-cols-1 gap-4 md:gap-5
-              ${
+          
+          {project.screenshots?.length > 0 && (
+            <div
+              className={`grid grid-cols-1 gap-4 md:gap-5 ${
                 project.screenshots.length === 2
                   ? "md:grid-cols-2"
                   : "md:grid-cols-2 lg:grid-cols-3"
-              }
-            `}
-          >
-            {project.screenshots.map((screenshot, index) => (
-              <motion.div
-                key={`${project.id}-${index}`}
-                whileHover={{ scale: 1.02, y: -10 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 450,
-                  damping: 18,
-                }}
-                className=" glass rounded-xl md:rounded-2xl overflow-hidden hover:border-violet-500/50 cursor-zoom-in "
-                onClick={() => setSelectedImage(screenshot)}
-              >
-                <img
-                  src={screenshot.src}
-                  alt={screenshot.alt}
-                  loading="lazy"
-                  className="w-full aspect-video object-cover"
-                />
-              </motion.div>
-            ))}
-          </div>
+              }`}
+            >
+              {project.screenshots.map((screenshot, index) => (
+                <motion.div
+                  key={`${project.id}-${index}`}
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ type: "spring", stiffness: 450, damping: 18 }}
+                  className="glass rounded-xl md:rounded-2xl overflow-hidden hover:border-violet-500/50 cursor-zoom-in"
+                  onClick={() => setSelectedImage(screenshot)}
+                >
+                  <img
+                    src={screenshot.src}
+                    alt={screenshot.alt}
+                    loading="lazy"
+                    className="w-full aspect-video object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          )}
 
-          {/* Features Description */}
+
+          
           <div className="mt-10 md:mt-14 mb-6 md:mb-8">
             <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
               Key Features
@@ -78,7 +74,7 @@ export default function FeaturedProject() {
             </p>
           </div>
 
-          {/* Features */}
+          
           <div
             className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
             {project.features.map((feature) => (
@@ -99,17 +95,21 @@ export default function FeaturedProject() {
             ))}
           </div>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-10 md:mt-12">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 font-medium text-center" >
-              Live Demo
-            </motion.a>
+          
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-10 md:mt-12">            
+            {project.liveUrl && (
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 font-medium text-center"
+              >
+                Live Demo
+              </motion.a>
+            )}
+
 
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -118,7 +118,7 @@ export default function FeaturedProject() {
               target="_blank"
               rel="noopener noreferrer"
               className=" px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 font-medium text-center" >
-              GitHub
+              Source code
             </motion.a>
           </div>
         </div>

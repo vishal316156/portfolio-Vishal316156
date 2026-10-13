@@ -4,13 +4,13 @@ import {
   SiReact,
   SiJavascript,
   SiTailwindcss,
-  SiFramer,
   SiNodedotjs,
   SiExpress,
   SiMongodb,
   SiGit,
   SiGithub,
   SiVercel,
+  SiDocker,
 } from "react-icons/si";
 
 import { TbApi } from "react-icons/tb";
@@ -79,6 +79,12 @@ const techs = [
     icon: SiVercel,
     color: "text-white",
   },
+  {
+    name: "Docker",
+    category: "Tools",
+    icon: SiDocker,
+    color: "text-white",
+  },
 ];
 
 const categories = [
@@ -102,7 +108,6 @@ export default function TechStack() {
   return (
     <section className="section">
 
-      {/* Heading */}
       <div className="text-center mb-12">
 
         <p className="text-violet-400 text-sm font-semibold tracking-widest uppercase mb-3">
@@ -149,16 +154,8 @@ export default function TechStack() {
 
       </div>
 
-      {/* Technology cards */}
       <div
-        className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          lg:grid-cols-3
-          gap-4
-          max-w-5xl
-          mx-auto
+        className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto
         "
       >
         {filteredTechs.map((tech) => {
@@ -167,26 +164,10 @@ export default function TechStack() {
           return (
             <div
               key={tech.name}
-              className="
-                group
-                flex
-                items-center
-                gap-4
-                p-5
-                rounded-2xl
-                border
-                border-white/10
-                bg-white/[0.03]
-                backdrop-blur-sm
-                transition-all
-                duration-200
-                hover:-translate-y-1
-                hover:border-violet-500/40
-                hover:bg-violet-500/[0.04]
+              className=" group flex items-center gap-4 p-5 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-violet-500/40 hover:bg-violet-500/[0.04]
               "
             >
 
-              {/* Technology icon */}
               <div className="flex items-center justify-center w-12 h-12 shrink-0">
 
                 <Icon
@@ -201,7 +182,6 @@ export default function TechStack() {
 
               </div>
 
-              {/* Technology information */}
               <div>
 
                 <h3 className="font-semibold text-white">

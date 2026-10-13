@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
@@ -6,41 +7,66 @@ import { HiMoon, HiSun } from "react-icons/hi";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Detect the active section while scrolling
   useEffect(() => {
-  const sections = document.querySelectorAll("section[id]");
+    const sectionIds = ["about", "projects", "dsa", "contact"];
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+    const updateActiveSection = () => {
+      const marker = 180;
+      let current = sectionIds[0];
+
+      for (const id of sectionIds) {
+        const section = document.getElementById(id);
+
+        if (
+          section &&
+          section.getBoundingClientRect().top <= marker
+        ) {
+          current = id;
         }
-      });
-    },
-    {
-      threshold: 0,
-      rootMargin: "-40% 0px -40% 0px",
-    }
-  );
+      }
 
-  sections.forEach((section) => observer.observe(section));
+      // Handle reaching the bottom of the page
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 5
+      ) {
+        current = sectionIds[sectionIds.length - 1];
+      }
 
-  return () => observer.disconnect();
+      setActiveSection(current);
+    };
 
-}, []);
+    window.addEventListener("scroll", updateActiveSection, {
+      passive: true,
+    });
+    window.addEventListener("hashchange", updateActiveSection);
+    window.addEventListener("resize", updateActiveSection);
+
+    updateActiveSection();
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("hashchange", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, []);
 
   const links = [
     { name: "About", href: "#about" },
@@ -48,7 +74,6 @@ export default function Navbar() {
     { name: "DSA", href: "#dsa" },
     { name: "Contact", href: "#contact" },
   ];
-
 
   return (
     <>
@@ -68,32 +93,30 @@ export default function Navbar() {
             className="text-2xl font-black tracking-tight"
           >
             Vishal
-            <span className="gradient-text">.</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
-
             {links.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={` px-4 py-2 rounded-full border transition-all duration-300
-
-              ${
-                activeSection === item.href.replace("#", "")
-                  ? "border-violet-500 text-white shadow-[0_0_20px_rgba(139,92,246,0.25)]"
-                  : "border-transparent text-zinc-300 hover:border-violet-500 hover:text-white"
-              }
-            `}
-            >
-              {item.name}
-            </a>
-          ))}
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => setActiveSection(item.href.slice(1))}
+                className={`px-4 py-2 rounded-full border transition-all duration-300
+                ${
+                  activeSection === item.href.slice(1)
+                    ? "border-violet-500 text-white shadow-[0_0_20px_rgba(139,92,246,0.25)]"
+                    : "border-transparent text-zinc-300 hover:border-violet-500 hover:text-white"
+                }`}
+              >
+                {item.name}
+              </a>
+            ))}
           </div>
 
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden text-3xl"
+            aria-label={open ? "Close menu" : "Open menu"}
           >
             {open ? <HiX /> : <HiMenuAlt3 />}
           </button>
@@ -113,8 +136,15 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="text-lg"
+                  onClick={() => {
+                    setActiveSection(item.href.slice(1));
+                    setOpen(false);
+                  }}
+                  className={`text-lg ${
+                    activeSection === item.href.slice(1)
+                      ? "text-violet-400"
+                      : "text-zinc-300"
+                  }`}
                 >
                   {item.name}
                 </a>
@@ -123,6 +153,7 @@ export default function Navbar() {
               <a
                 href="/resume.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-fit px-5 py-2 rounded-full border border-zinc-700"
               >
                 Resume
