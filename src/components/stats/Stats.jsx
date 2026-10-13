@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import CountUp from "react-countup";
+import { projects } from "../../data/projects";
 
 export default function Stats({ stats }) {
   const leetcodeRating = stats?.leetcode?.maxRating ?? 0;
@@ -8,7 +8,7 @@ export default function Stats({ stats }) {
 
   const overviewStats = [
     {
-      value: stats?.portfolio?.majorProjects ?? 0,
+      value: projects.length,
       suffix: "",
       label: "Major Projects",
     },

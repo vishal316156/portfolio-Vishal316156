@@ -44,9 +44,10 @@ body {
 
 .section {
   max-width: 1280px;
-  margin: auto;
-  padding: 90px 24px;
+  margin: 0 auto;
+  padding: 56px 24px;
 }
+
 
 .gradient-text {
   background: linear-gradient(
@@ -68,6 +69,12 @@ body {
   box-shadow:
     0 0 8px rgba(139, 92, 246, 0.35),
     0 0 16px rgba(139, 92, 246, 0.2);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 20px;
+  }
 }
 
 @keyframes marquee {

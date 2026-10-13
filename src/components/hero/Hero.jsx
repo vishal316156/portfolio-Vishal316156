@@ -21,11 +21,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="
-        section
-        relative
-        overflow-hidden
-      "
+      className="section relative overflow-hidden !pt-28 md:!pt-32"
     >
 
     <div className=" absolute top-10 left-0 h-72 w-72 bg-violet-600/30 blur-[120px] rounded-full pointer-events-none"/>
@@ -39,7 +35,7 @@ export default function Hero() {
 
       </div>
 
-      <div className="section grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
         <div>
           <motion.p
             initial={{ opacity: 0 }}
